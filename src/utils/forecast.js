@@ -8,7 +8,7 @@ const forecast = (lat, long, callback)=>{
             } else if(body.error){
                 callback('Location not found', undefined)
             } else {
-                const text = `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature}c out. It feels like ${body.current.feelslike}c out`
+                const text = `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature}c out. It feels like ${body.current.feelslike}c out. The Wind Direction is ${body.current.wind_dir} and the humidity is ${body.current.humidity}.`
                 callback(undefined, text)
             }
     })
